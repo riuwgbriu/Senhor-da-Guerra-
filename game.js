@@ -197,6 +197,16 @@ document.getElementById("btnTurno").onclick = function(){
         mostrarPopup("💀 A fome matou 5 habitantes!");
 
     }
+    
+// Crescimento da população
+
+if(reino.comida >= reino.populacao * 10){
+
+    reino.populacao += 2;
+
+    resumo += "👶 Nasceram 2 novos habitantes.<br><br>";
+
+}
 
     // Estações
     if(reino.estacao == "Primavera"){
@@ -217,6 +227,8 @@ document.getElementById("btnTurno").onclick = function(){
         reino.ano++;
 
     }
+    
+
 
     atualizarTela();
 
@@ -277,3 +289,4 @@ document.getElementById("btnTreinar").onclick = function(){
     }
 
 };
+

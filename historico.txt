@@ -19,4 +19,4 @@ v0.2.7 resumo de turnos na tela inicial
 
 v0.2.8 criação do botao quartel
 
-v0.2.9 criações do Quartel e treinamento 
+v0.2.9 criações do Quartel e treinamento,nascimento de pessoas
