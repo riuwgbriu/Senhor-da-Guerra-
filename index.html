@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Senhor da Guerra</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- MENU -->
+
+<div id="menu">
+
+    <h1>SENHOR DA GUERRA</h1>
+
+    <p>Um reino espera por você...</p>
+
+    <p>"O destino de milhares de pessoas será decidido por suas escolhas."</p>
+
+    <button id="btnIniciar" class="menuBotao">
+        INICIAR
+    </button>
+
+</div>
+
+<!-- NOVO REINO -->
+
+<div id="novoReino" style="display:none;">
+
+    <h1>NOVO REINO</h1>
+
+    <p>🏰 Nome do Reino</p>
+
+    <input
+        type="text"
+        id="nomeReino"
+        maxlength="20"
+        placeholder="Ex.: Avalon">
+
+    <br><br>
+
+    <p>👑 Nome do Governante</p>
+
+    <input
+        type="text"
+        id="nomePlayer"
+        maxlength="20"
+        placeholder="Ex.: Christian">
+
+    <br><br>
+
+    <button id="btnContinuar" class="menuBotao">
+        CONTINUAR
+    </button>
+
+</div>
+
+<!-- CONSTRUÇÕES -->
+
+<div id="construcoes" style="display:none;">
+
+    <h1>CONSTRUÇÕES</h1>
+
+    <div class="painel">
+
+        <button id="btnFazenda" class="menuBotao">
+            🌾 Fazenda
+            <br>
+            50 Ouro
+        </button>
+
+    <button id="btnSerraria" class="menuBotao">
+🪵 Serraria
+<br>
+80 Ouro
+</button>
+
+        <button id="btnMina" class="menuBotao">
+⛏ Mina
+<br>
+150 Ouro
+</button>
+
+        <button id="btnQuartel" class="menuBotao">
+🏹 Quartel
+<br>
+120 Ouro
+</button>
+
+    </div>
+
+    <button id="btnVoltarConstrucoes" class="menuBotao">
+        VOLTAR
+    </button>
+
+</div>
+
+<!-- EXÉRCITO -->
+
+<div id="exercito" style="display:none;">
+
+    <h1>EXÉRCITO</h1>
+
+    <div class="painel">
+
+        <p>👤 Recrutas:
+            <span id="recrutas">0</span>
+        </p>
+
+        <p>⚔ Soldados:
+            <span id="soldados">0</span>
+        </p>
+
+        <p>🏹 Arqueiros:
+            <span id="arqueiros">0</span>
+        </p>
+
+        <p>🐎 Cavaleiros:
+            <span id="cavaleiros">0</span>
+        </p>
+
+    </div>
+
+    <button id="btnTreinar" class="menuBotao">
+        Treinar Soldado
+        <br>
+        20 Ouro + 10 Comida
+    </button>
+
+    <button id="btnVoltarExercito" class="menuBotao">
+        Voltar
+    </button>
+
+</div>
+
+<!-- JOGO -->
+
+<div id="game" style="display:none;">
+
+    <h1>SENHOR DA GUERRA</h1>
+
+    <div class="painel">
+
+        <p><strong>Ano:</strong> <span id="ano">1</span></p>
+
+        <p><strong>Estação:</strong> <span id="estacao">Primavera</span></p>
+
+        <hr>
+
+        <p><strong>🏰 Reino:</strong> <span id="reino">Lopes</span></p>
+
+        <p><strong>👑 Governante:</strong> <span id="governante">Governante</span></p>
+
+        <hr>
+
+        <p>👥 População:
+            <span id="pop">132</span>
+        </p>
+
+        <p>🪙 Ouro:
+            <span id="ouro">180</span>
+        </p>
+
+        <p>🌾 Comida:
+            <span id="comida">240</span>
+        </p>
+
+        <p>🪵 Madeira:
+            <span id="madeira">85</span>
+        </p>
+
+        <hr>
+
+        <h3>🏗️ Construções</h3>
+
+        <p>🌾 Fazendas:
+            <span id="fazendas">0</span>
+        </p>
+
+        <p>🪵 Serrarias:
+            <span id="serrarias">0</span>
+        </p>
+
+        <p>⛏ Minas:
+            <span id="minas">0</span>
+        </p>
+
+        <p>🏹 Quartéis:
+            <span id="quarteis">0</span>
+        </p>
+
+    </div>
+
+    <div class="mensagem">
+
+    <h3>📜 Resumo do Turno</h3>
+
+    <div id="resumoTurno">
+
+        Bem-vindo, meu senhor.<br>
+        Seu reino aguarda suas ordens.
+
+    </div>
+
+</div>
+
+    <button id="btnConstrucoes" class="menuBotao">
+        Construções
+    </button>
+
+<button id="btnExercito" class="menuBotao">
+    Exército
+</button>
+
+    <button class="menuBotao">
+        Exploração
+    </button>
+
+ <button id="btnTurno" class="menuBotao">
+    Próximo Turno
+</button>
+
+</div>
+
+<div id="popup"></div>
+
+<script src="dados.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>

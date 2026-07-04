@@ -1,0 +1,22 @@
+senhor da Guerra 3/7/2026
+v0.1 base primeira tela,e layout.
+ 
+v0.2 adicionado input name.
+ 
+v0.2.1 adicionado dados.js.
+
+v0.2.2 adicionado função do botao construir.
+
+v0.2.3 final com popup
+
+v0.2.4 Fazenda com producao e botao proximo turno
+
+v0.2.5 adicionado a serraria
+
+v0.2.6 adicionado mina de ouro
+
+v0.2.7 resumo de turnos na tela inicial
+
+v0.2.8 criação do botao quartel
+
+v0.2.9 criações do Quartel e treinamento 

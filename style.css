@@ -1,0 +1,207 @@
+body{
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+    padding:20px;
+}
+
+/* CENTRALIZA AS TELAS */
+
+#menu,
+#novoReino,
+#game,
+#construcoes{
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+/* BOTÕES */
+
+button{
+    font-size:24px;
+    padding:12px 25px;
+}
+
+.menuBotao{
+
+    width:100%;
+    max-width:350px;
+
+    display:block;
+
+    margin:12px auto;
+
+    padding:10px;
+
+    font-size:20px;
+
+    background:#333;
+    color:#fff;
+
+    border:2px solid #666;
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.menuBotao:hover{
+    background:#444;
+}
+
+.menuBotao:active{
+    background:#555;
+}
+
+#btnIniciar{
+
+    width:100%;
+    max-width:320px;
+
+    display:block;
+
+    margin:10px auto;
+
+    padding:10px;
+
+    font-size:20px;
+
+    background:#333;
+    color:#fff;
+
+    border:2px solid #666;
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+#btnIniciar:hover{
+    background:#444;
+}
+
+#btnIniciar:active{
+    background:#555;
+}
+
+/* CAMPOS DE TEXTO */
+
+#novoReino{
+
+    text-align:center;
+
+}
+
+#novoReino p{
+
+    font-size:20px;
+
+    margin-top:20px;
+
+}
+
+#novoReino input{
+
+    width:100%;
+    max-width:350px;
+
+    padding:10px;
+
+    font-size:20px;
+
+    color:white;
+
+    background:#222;
+
+    border:2px solid #666;
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+#novoReino input:focus{
+
+    border-color:#999;
+
+}
+
+/* PAINEL */
+
+.painel{
+
+    margin-bottom:20px;
+
+    background:#1a1a1a;
+
+    border:2px solid #444;
+
+    border-radius:10px;
+
+    padding:15px;
+
+}
+
+/* MENSAGENS */
+
+.mensagem{
+
+    margin:20px 0;
+
+    padding:15px;
+
+    background:#222;
+
+    border-left:4px solid #888;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+}
+
+/* LINHAS */
+
+hr{
+
+    border:1px solid #555;
+
+}
+
+/* POP-UP */
+
+#popup{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#2b2b2b;
+
+    color:#fff;
+
+    border:2px solid #777;
+
+    border-radius:10px;
+
+    padding:15px 25px;
+
+    font-size:18px;
+
+    opacity:0;
+
+    transition:opacity .4s;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
