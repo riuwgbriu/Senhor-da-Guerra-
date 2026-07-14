@@ -4,9 +4,13 @@ let reino = {
 
     governante:"",
 
-    ano:1,
-
-    estacao:"Primavera",
+    semana: 1,
+    
+     mes: 1,
+     
+     estacao: "Primavera",
+      
+      ano: 1,
 
     populacao:132,
 
@@ -24,12 +28,18 @@ let reino = {
 
     quarteis:0,
     
+    casas:0,
+    
     recrutas:0,
 
    soldados:0,
 
    arqueiros:0,
 
-   cavaleiros:0
+   cavaleiros:0,
+   
+   mercados: 0,
+   
+   turnos: 0,
 
 };

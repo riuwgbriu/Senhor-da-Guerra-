@@ -20,3 +20,40 @@ v0.2.7 resumo de turnos na tela inicial
 v0.2.8 criação do botao quartel
 
 v0.2.9 criações do Quartel e treinamento,nascimento de pessoas
+
+v0.3.0 inicio da exploração 
+
+v0.3.1 floresta com ramdon e troca de turno
+
+v0.3.2 Painel de recursos na exploração
+Notificações compactas
+Expulsão automática da exploração ao perder o último soldado
+
+v0.3.3 Casas aumentando a capacidade da população.
+
+v0.3.4 fix no time de notificações 
+
+v0.3.5 Sistema de nascimento revisado.
+Nerf aleatório no nascimento: cada novo habitante gera um custo/penalidade aleatória entre 5 e 15, reduzindo o crescimento excessivamente rápido da população.
+
+v0.3.6 uso para madeira
+
+v0.3.7 adicionado mercado
+
+v0.3.8 adicionado tela/botao mercado e a mecanica de compras
+
+v0.3.9 casas dao bonus pupuacional,a natalidade sobe com o mumero de nascimentos 
+
+v0.4.0 tela de game over adicionada, agora quando a população chega a 0 o jogo termina 
+
+v0.4.1 atualização da floresta 16 eventos
+
+v0.4.2 Montanha adicionada
+
+v0.4.3 sistema de tempo modificado e changelog na tela de nome
+
+0.4.4 bugs notificações fix,adicinado funçao de formatar numeros no painel de recuros
+
+0.4.5 resumo agora fica abaixo do botao proximo turno. e ao lado do avancar estaçao tem o proximo turno
+
+0.4.6 32 eventos do reino 

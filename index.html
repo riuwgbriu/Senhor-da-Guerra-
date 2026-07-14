@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
@@ -14,143 +15,401 @@
 
 <body>
 
-<!-- MENU -->
+<!-- ==========================
+MENU
+========================== -->
 
 <div id="menu">
 
-    <h1>SENHOR DA GUERRA</h1>
+<h1>⚔️ SENHOR DA GUERRA ⚔️</h1>
 
-    <p>Um reino espera por você...</p>
+<p>Um reino espera por você...</p>
 
-    <p>"O destino de milhares de pessoas será decidido por suas escolhas."</p>
+<p>"O destino de milhares de pessoas será decidido por suas escolhas."</p>
 
-    <button id="btnIniciar" class="menuBotao">
-        INICIAR
-    </button>
+<button id="btnIniciar" class="menuBotao">
+
+INICIAR
+
+</button>
 
 </div>
 
-<!-- NOVO REINO -->
+<!-- ==========================
+NOVO REINO
+========================== -->
 
 <div id="novoReino" style="display:none;">
 
-    <h1>NOVO REINO</h1>
+<h1>NOVO REINO</h1>
 
-    <p>🏰 Nome do Reino</p>
+<p>🏰 Nome do Reino</p>
 
-    <input
-        type="text"
-        id="nomeReino"
-        maxlength="20"
-        placeholder="Ex.: Avalon">
+<input
+type="text"
+id="nomeReino"
+maxlength="20"
+placeholder="Ex.: Avalon">
 
-    <br><br>
+<br><br>
 
-    <p>👑 Nome do Governante</p>
+<p>👑 Nome do Governante</p>
 
-    <input
-        type="text"
-        id="nomePlayer"
-        maxlength="20"
-        placeholder="Ex.: Christian">
+<input
+type="text"
+id="nomePlayer"
+maxlength="20"
+placeholder="Ex.: Christian">
 
-    <br><br>
+<br><br>
 
-    <button id="btnContinuar" class="menuBotao">
-        CONTINUAR
-    </button>
+<hr>
+
+<h3>📜 Atualizações</h3>
+
+<div id="changelog">
+
+<b>⚔️ SENHOR DA GUERRA</b><br>
+📅 03/07/2026-ATUAL<br><br>
+
+<b>🛡 v0.4.6</b>Eventos do Reino (32 eventos)<br>
+<b>⏩ v0.4.5</b>Botão "Próxima Estação"<br>
+<b>🛡️ v0.4.4</b> 🔧 Fix notificações | 🔢 Números compactos<br>
+<b>⏳ v0.4.3</b> 📅 Sistema de tempo | 📜 Changelog<br>
+<b>🏔️ v0.4.2</b> Montanha adicionada<br>
+<b>🌲 v0.4.1</b> Floresta +16 eventos<br>
+<b>💀 v0.4.0</b> Tela Game Over<br>
+
+<b>🏰 v0.3.9</b> 👥 Bônus populacional<br>
+<b>🏪 v0.3.8</b> Compras no mercado<br>
+<b>🪙 v0.3.7</b> Sistema de mercado<br>
+<b>🪵 v0.3.6</b> Uso da madeira<br>
+<b>👶 v0.3.5</b> Nascimento revisado<br>
+<b>📢 v0.3.4</b> Fix notificações<br>
+<b>🏠 v0.3.3</b> Casas e população<br>
+<b>🗺️ v0.3.2</b> Painel exploração<br>
+<b>🌲 v0.3.1</b> Floresta e eventos<br>
+<b>⚔️ v0.3.0</b> Exploração inicial<br>
+
+<b>🏹 v0.2.9</b> Treino e crescimento<br>
+<b>🏰 v0.2.8</b> Quartel<br>
+<b>📜 v0.2.7</b> Resumo de turno<br>
+<b>⛏️ v0.2.6</b> Mina de ouro<br>
+<b>🪵 v0.2.5</b> Serraria<br>
+<b>🌾 v0.2.4</b> Fazenda e turnos<br>
+<b>💬 v0.2.3</b> Popup<br>
+<b>🏗️ v0.2.2</b> Construções<br>
+<b>📂 v0.2.1</b> Dados.js<br>
+<b>👤 v0.2</b> Nome do reino<br>
+<b>🏰 v0.1</b> Base inicial e layout
+</div>
+
+<hr>
+
+<div id="creditos">
+
+🎮 Projeto: <b>riuwgbriu</b><br>
+🤖 Assistência: <b>ChatGPT</b>
 
 </div>
 
-<!-- CONSTRUÇÕES -->
+<button id="btnContinuar" class="menuBotao">
+
+CONTINUAR
+
+</button>
+
+</div>
+
+<!-- ==========================
+CONSTRUÇÕES
+========================== -->
 
 <div id="construcoes" style="display:none;">
 
-    <h1>CONSTRUÇÕES</h1>
+<h1>CONSTRUÇÕES</h1>
 
-    <div class="painel">
+<div class="painel">
 
-        <button id="btnFazenda" class="menuBotao">
-            🌾 Fazenda
-            <br>
-            50 Ouro
-        </button>
+<button id="btnFazenda" class="menuBotao">
 
-    <button id="btnSerraria" class="menuBotao">
+🌾 Fazenda
+
+<br>
+
+🪙50 | 🪵20
+
+</button>
+
+<button id="btnCasa" class="menuBotao">
+
+🏠 Casa
+
+<br>
+
+🪙50 | 🪵100
+
+</button>
+
+<button id="btnSerraria" class="menuBotao">
+
 🪵 Serraria
+
 <br>
-80 Ouro
+
+🪙80 | 🪵40
+
 </button>
 
-        <button id="btnMina" class="menuBotao">
+<button id="btnMina" class="menuBotao">
+
 ⛏ Mina
+
 <br>
-150 Ouro
+
+🪙150 | 🪵60
+
 </button>
 
-        <button id="btnQuartel" class="menuBotao">
+<button id="btnQuartel" class="menuBotao">
+
 🏹 Quartel
+
 <br>
-120 Ouro
+
+🪙120 | 🪵80
+
 </button>
 
-    </div>
+<button id="btnMercado" class="menuBotao">
 
-    <button id="btnVoltarConstrucoes" class="menuBotao">
-        VOLTAR
-    </button>
+🏪 Mercado
+
+<br>
+
+🪙200 | 🪵100
+
+</button>
 
 </div>
 
-<!-- EXÉRCITO -->
+<button id="btnVoltarConstrucoes" class="menuBotao">
+
+VOLTAR
+
+</button>
+
+</div>
+
+<!-- ==========================
+EXÉRCITO
+========================== -->
 
 <div id="exercito" style="display:none;">
 
-    <h1>EXÉRCITO</h1>
+<h1>EXÉRCITO</h1>
+
+<div class="painel">
+
+<p>👤 Recrutas: <span id="recrutas">0</span></p>
+
+<p>⚔ Soldados: <span id="soldados">0</span></p>
+
+<p>🏹 Arqueiros: <span id="arqueiros">0</span></p>
+
+<p>🐎 Cavaleiros: <span id="cavaleiros">0</span></p>
+
+</div>
+
+<button id="btnTreinar" class="menuBotao">
+
+Treinar Soldado
+
+<br>
+
+20 Ouro + 10 Comida
+
+</button>
+
+<button id="btnVoltarExercito" class="menuBotao">
+
+Voltar
+
+</button>
+
+</div>
+
+<!-- ==========================
+EXPLORAÇÃO
+========================== -->
+
+<div id="exploracao" style="display:none;">
+
+<h1>🗺 EXPLORAÇÃO</h1>
+
+<div class="painelStatus">
+
+👥 <span id="popExploracao">0</span>
+
+⚔ <span id="soldadosExploracao">0</span>
+
+🪙 <span id="ouroExploracao">0</span>
+
+🌾 <span id="comidaExploracao">0</span>
+
+🪵 <span id="madeiraExploracao">0</span>
+
+</div>
+
+<hr>
+
+<div class="painel">
+
+<p>Escolha um local para explorar.</p>
+
+</div>
+
+<button id="btnFloresta" class="menuBotao">🌲 Floresta</button>
+
+<button id="btnMontanha" class="menuBotao">🏔 Montanha</button>
+
+<button id="btnRio" class="menuBotao">🌊 Rio</button>
+
+<button id="btnRuinas" class="menuBotao">🏛 Ruínas</button>
+
+<button id="btnVoltarExploracao" class="menuBotao">
+
+⬅ Voltar ao Reino
+
+</button>
+
+</div>
+
+<!-- ==========================
+MERCADO
+========================== -->
+
+<div id="mercado" style="display:none;">
+
+    <h1>🏪 MERCADO</h1>
 
     <div class="painel">
 
-        <p>👤 Recrutas:
-            <span id="recrutas">0</span>
-        </p>
+        <p>Compre e venda recursos.</p>
 
-        <p>⚔ Soldados:
-            <span id="soldados">0</span>
-        </p>
+        <div class="painelStatus">
 
-        <p>🏹 Arqueiros:
-            <span id="arqueiros">0</span>
-        </p>
+            👥 <span id="popMercado">0</span>
 
-        <p>🐎 Cavaleiros:
-            <span id="cavaleiros">0</span>
-        </p>
+            ⚔ <span id="soldadosMercado">0</span>
+
+            🪙 <span id="ouroMercado">0</span>
+
+            🌾 <span id="comidaMercado">0</span>
+
+            🪵 <span id="madeiraMercado">0</span>
+
+        </div>
 
     </div>
 
-    <button id="btnTreinar" class="menuBotao">
-        Treinar Soldado
+    <button id="btnComprarComida" class="menuBotao">
+        🌾 Comprar 100 Comida
         <br>
-        20 Ouro + 10 Comida
+        🪙 50
     </button>
 
-    <button id="btnVoltarExercito" class="menuBotao">
-        Voltar
+    <button id="btnComprarMadeira" class="menuBotao">
+        🪵 Comprar 100 Madeira
+        <br>
+        🪙 60
+    </button>
+
+    <button id="btnVenderComida" class="menuBotao">
+        🌾 Vender 100 Comida
+        <br>
+        🪙 +30
+    </button>
+
+    <button id="btnVenderMadeira" class="menuBotao">
+        🪵 Vender 100 Madeira
+        <br>
+        🪙 +40
+    </button>
+
+    <button id="btnVoltarMercado" class="menuBotao">
+
+        ⬅ Voltar
+
     </button>
 
 </div>
 
-<!-- JOGO -->
+<!-- ==========================
+GAME OVER
+========================== -->
 
-<div id="game" style="display:none;">
+<div id="gameOver" style="display:none;">
 
-    <h1>SENHOR DA GUERRA</h1>
+    <h1>💀 GAME OVER</h1>
+
+    <p id="goFrase"></p>
 
     <div class="painel">
 
-        <p><strong>Ano:</strong> <span id="ano">1</span></p>
+        <p>🏰 Reino:
+            <span id="goReino"></span>
+        </p>
 
-        <p><strong>Estação:</strong> <span id="estacao">Primavera</span></p>
+        <p>👑 Governante:
+            <span id="goGovernante"></span>
+        </p>
+
+        <hr>
+
+        <p>📅 Anos:
+            <span id="goAnos"></span>
+        </p>
+
+        <p>⏳ Turnos:
+            <span id="goTurnos"></span>
+        </p>
+
+        <p>⭐ Nível:
+            Em desenvolvimento
+        </p>
+
+        <p>🏆 Pontuação:
+            Em desenvolvimento
+        </p>
+
+    </div>
+
+    <button id="btnNovoJogo" class="menuBotao">
+
+        🔄 Novo Jogo
+
+    </button>
+
+</div>
+
+<!-- ==========================
+JOGO
+========================== -->
+
+<div id="game" style="display:none;">
+
+    <h1>⚔️ SENHOR DA GUERRA ⚔️</h1>
+
+    <div class="painel">
+
+        <p><strong>📅 Semana:</strong> <span id="semana">1</span></p>
+
+        <p><strong>🗓️ Mês:</strong> <span id="mes">1</span></p>
+
+        <p><strong>🍂 Estação:</strong> <span id="estacao">🌸 Primavera</span></p>
+
+        <p><strong>📖 Ano:</strong> <span id="ano">1</span></p>
 
         <hr>
 
@@ -188,6 +447,10 @@
             <span id="serrarias">0</span>
         </p>
 
+        <p>🏠 Casas:
+            <span id="casas">0</span>
+        </p>
+
         <p>⛏ Minas:
             <span id="minas">0</span>
         </p>
@@ -196,40 +459,208 @@
             <span id="quarteis">0</span>
         </p>
 
+        <p>🏪 Mercados:
+            <span id="mercados">0</span>
+        </p>
+
+    </div>
+
+<div class="botoesTempo">
+
+<button id="btnEstacao" class="menuBotao">
+🍂 Próxima Estação
+</button>
+
+<button id="btnTurno" class="menuBotao">
+⏳ Próximo Turno
+</button>
+
+</div>
+
+    <div class="mensagem">
+
+        <h3>📜 Resumo do Turno</h3>
+
+        <div id="resumoTurno">
+
+            Bem-vindo, meu senhor.<br>
+            Seu reino aguarda suas ordens.
+
+        </div>
+
+    </div>
+
+    <button id="btnConstrucoes" class="menuBotao">
+        🏗️ Construções
+    </button>
+
+    <button id="btnExercito" class="menuBotao">
+        ⚔️ Exército
+    </button>
+
+    <button id="btnExploracao" class="menuBotao">
+        🗺 Exploração
+    </button>
+
+    <button id="btnMercadoTela" class="menuBotao" style="display:none;">
+        🏪 Mercado
+    </button>
+
+</div>
+
+
+<!-- GAME OVER -->
+
+<div id="gameOver" style="display:none;">
+
+    <h1>💀 GAME OVER</h1>
+
+    <p id="goFrase"></p>
+
+    <div class="painel">
+
+        <p>🏰 Reino: <span id="goReino"></span></p>
+
+        <p>👑 Governante: <span id="goGovernante"></span></p>
+
+        <hr>
+
+        <p>📅 Anos: <span id="goAnos"></span></p>
+
+        <p>⏳ Turnos: <span id="goTurnos"></span></p>
+
+        <p>⭐ Nível: Em desenvolvimento</p>
+
+        <p>🏆 Pontuação: Em desenvolvimento</p>
+
+    </div>
+
+    <button id="btnNovoJogo" class="menuBotao">
+        🔄 Novo Jogo
+    </button>
+
+</div>
+
+<!-- JOGO -->
+
+<div id="game" style="display:none;">
+
+    <h1>⚔️ SENHOR DA GUERRA ⚔️</h1>
+
+    <div class="painel">
+
+        <p><strong>📅 Semana:</strong> <span id="semana">1</span></p>
+
+        <p><strong>🗓️ Mês:</strong> <span id="mes">1</span></p>
+
+        <p><strong>🍂 Estação:</strong> <span id="estacao">🌸 Primavera</span></p>
+
+        <p><strong>📖 Ano:</strong> <span id="ano">1</span></p>
+
+        <hr>
+
+        <p><strong>🏰 Reino:</strong> <span id="reino">Lopes</span></p>
+
+        <p><strong>👑 Governante:</strong> <span id="governante">Governante</span></p>
+
+        <hr>
+
+        <p>👥 População:
+            <span id="pop">132</span>
+        </p>
+
+        <p>🪙 Ouro:
+            <span id="ouro">180</span>
+        </p>
+
+        <p>🌾 Comida:
+            <span id="comida">240</span>
+        </p>
+
+        <p>🪵 Madeira:
+            <span id="madeira">85</span>
+        </p>
+
+        <hr>
+
+        <h3>🏗️ Construções</h3>
+
+        <p>🌾 Fazendas:
+            <span id="fazendas">0</span>
+        </p>
+
+        <p>🪵 Serrarias:
+            <span id="serrarias">0</span>
+        </p>
+
+        <p>🏠 Casas:
+            <span id="casas">0</span>
+        </p>
+
+        <p>⛏ Minas:
+            <span id="minas">0</span>
+        </p>
+
+        <p>🏹 Quartéis:
+            <span id="quarteis">0</span>
+        </p>
+
+        <p>🏪 Mercados:
+            <span id="mercados">0</span>
+        </p>
+
     </div>
 
     <div class="mensagem">
 
-    <h3>📜 Resumo do Turno</h3>
+        <h3>📜 Resumo do Turno</h3>
 
-    <div id="resumoTurno">
+        <div id="resumoTurno">
 
-        Bem-vindo, meu senhor.<br>
-        Seu reino aguarda suas ordens.
+            Bem-vindo, meu senhor.<br>
+            Seu reino aguarda suas ordens.
+
+        </div>
 
     </div>
-
-</div>
 
     <button id="btnConstrucoes" class="menuBotao">
         Construções
     </button>
 
-<button id="btnExercito" class="menuBotao">
-    Exército
-</button>
+    <button id="btnExercito" class="menuBotao">
+        Exército
+    </button>
 
-    <button class="menuBotao">
+    <button id="btnExploracao" class="menuBotao">
         Exploração
     </button>
 
- <button id="btnTurno" class="menuBotao">
-    Próximo Turno
-</button>
+    <button id="btnMercadoTela" class="menuBotao" style="display:none;">
+        Mercado
+    </button>
+
+    <button id="btnTurno" class="menuBotao">
+        Próximo Turno
+    </button>
 
 </div>
 
+<!-- POPUP -->
+
 <div id="popup"></div>
+
+<!-- JANELA DE ESCOLHAS -->
+
+<div id="janelaEscolha" class="janelaEscolha" style="display:none;">
+
+    <p id="textoEscolha"></p>
+
+    <button id="btnEscolha1" class="menuBotao"></button>
+
+    <button id="btnEscolha2" class="menuBotao"></button>
+
+</div>
 
 <script src="dados.js"></script>
 <script src="game.js"></script>
