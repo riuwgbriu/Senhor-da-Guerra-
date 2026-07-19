@@ -41,5 +41,7 @@ let reino = {
    mercados: 0,
    
    turnos: 0,
+   
+   muralha: -1,
 
 };

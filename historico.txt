@@ -52,8 +52,25 @@ v0.4.2 Montanha adicionada
 
 v0.4.3 sistema de tempo modificado e changelog na tela de nome
 
-0.4.4 bugs notificações fix,adicinado funçao de formatar numeros no painel de recuros
+v0.4.4 bugs notificações fix,adicinado funçao de formatar numeros no painel de recuros
 
-0.4.5 resumo agora fica abaixo do botao proximo turno. e ao lado do avancar estaçao tem o proximo turno
+v0.4.5 resumo agora fica abaixo do botao proximo turno. e ao lado do avancar estaçao tem o proximo turno
 
-0.4.6 32 eventos do reino 
+v0.4.6 32 eventos do reino 
+
+v0.4.7 impostos de 10% ano nas construções
+
+v0.4.8 muralha adicionada 
+
+v0.4.9 — Sistema de Muralha
+Construção da muralha
+Integridade em %
+Painel oculto até ser construída
+Ataques automáticos
+Game Over específico quando a muralha chega a 0%
+
+v0.5.0 Chance de ataque aumenta conforme os anos.
+Ataques diferentes dependendo da época do reino.
+Dano variável.
+Possibilidade de a muralha resistir sem dano.
+Evento raríssimo "Algo gigantesco foi visto no horizonte...".

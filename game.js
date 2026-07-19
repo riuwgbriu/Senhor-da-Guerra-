@@ -1,6 +1,6 @@
 // =======================================
 // SENHOR DA GUERRA
-// Engine v0.3.1
+// Engine v0.5.0
 // =======================================
 
 //=============
@@ -9,7 +9,7 @@
 
 function custo(valor){
 
-    return Math.floor(valor * (1 + ((reino.ano - 1) * 0.05)));
+    return Math.floor(valor * (1 + ((reino.ano - 1) * 0.10)));
 
 }
 
@@ -140,6 +140,17 @@ if(reino.estacao == "Primavera"){
    document.getElementById("madeiraExploracao").innerText = formatarNumero(reino.madeira);
    document.getElementById("casas").innerText = reino.casas;
    document.getElementById("mercados").innerText = reino.mercados;
+
+if(reino.muralha >= 0){
+
+    document.getElementById("painelMuralha").style.display = "block";
+    document.getElementById("muralha").innerText = reino.muralha + "%";
+
+}else{
+
+    document.getElementById("painelMuralha").style.display = "none";
+
+}
    
    document.getElementById("popMercado").innerText = reino.populacao;
   document.getElementById("soldadosMercado").innerText = reino.soldados;
@@ -156,6 +167,28 @@ if(reino.estacao == "Primavera"){
     document.getElementById("btnMercadoTela").style.display = "none";
 
 }
+   
+   // Atualiza os custos dos botões
+
+document.getElementById("btnFazenda").innerHTML =
+"🌾 Fazenda<br>🪙 " + custo(50) + " | 🪵 " + custo(20);
+
+document.getElementById("btnCasa").innerHTML =
+"🏠 Construir Casa<br>🪙 " + custo(50) + " | 🪵 " + custo(100);
+
+document.getElementById("btnSerraria").innerHTML =
+"🪵 Serraria<br>🪙 " + custo(80) + " | 🪵 " + custo(40);
+
+document.getElementById("btnMina").innerHTML =
+"⛏ Mina<br>🪙 " + custo(150) + " | 🪵 " + custo(60);
+
+document.getElementById("btnQuartel").innerHTML =
+"🏹 Quartel<br>🪙 " + custo(120) + " | 🪵 " + custo(80);
+
+document.getElementById("btnMercado").innerHTML =
+"🏪 Mercado<br>🪙 " + custo(200) + " | 🪵 " + custo(100);
+   
+   
    
 }
 
@@ -205,6 +238,106 @@ reino.turnos++;
     }
     
     let capacidadePopulacao = 150 + (reino.casas * 25);
+
+// ==========================
+// ATAQUES À MURALHA
+// ==========================
+
+let chanceAtaque = 0;
+
+// Chance de ataque conforme o ano
+if(reino.ano <= 3){
+
+    chanceAtaque = 0.15;
+
+}else if(reino.ano <= 7){
+
+    chanceAtaque = 0.25;
+
+}else if(reino.ano <= 12){
+
+    chanceAtaque = 0.35;
+
+}else{
+
+    chanceAtaque = 0.45;
+
+}
+
+if(reino.muralha > 0 && Math.random() < chanceAtaque){
+
+    let dano = Math.floor(Math.random() * 4); // 0 a 3%
+
+    let ataques = [];
+
+    if(reino.ano <= 3){
+
+        ataques = [
+            "🏹 Bandidos atacaram a muralha.",
+            "🐺 Uma alcateia rondou o reino.",
+            "🏴 Saqueadores foram vistos na estrada.",
+            "🌩 Uma tempestade atingiu a muralha."
+        ];
+
+    }else if(reino.ano <= 7){
+
+        ataques = [
+            "👺 Goblins atacaram durante a noite.",
+            "⚔ Um reino vizinho testou suas defesas.",
+            "🏹 Arqueiros inimigos dispararam contra a muralha.",
+            "🪵 Um aríete atingiu os portões."
+        ];
+
+    }else{
+
+        ataques = [
+            "🐉 Um dragão sobrevoou o reino.",
+            "🪨 Um gigante lançou enormes pedras.",
+            "⚔ Um grande exército cercou o reino.",
+            "👹 Criaturas monstruosas atacaram a muralha."
+        ];
+
+    }
+
+    let evento = ataques[Math.floor(Math.random() * ataques.length)];
+
+    // Evento raríssimo (1%)
+    if(Math.random() < 0.01){
+
+        evento = "🌫 Algo gigantesco foi visto no horizonte... Os guardas permanecem em alerta.";
+
+    }
+
+    if(dano == 0){
+
+        resumo += evento + "<br>";
+        resumo += "🛡 A muralha resistiu sem sofrer danos.<br><br>";
+
+    }else{
+
+        reino.muralha -= dano;
+
+        if(reino.muralha < 0){
+            reino.muralha = 0;
+        }
+
+        resumo += evento + "<br>";
+        resumo += "🧱 Dano na muralha: -" + dano + "%<br><br>";
+
+    }
+
+    if(reino.muralha <= 0){
+
+        gameOver(
+            "🏰 As muralhas ruíram sob o ataque inimigo. O reino foi conquistado."
+        );
+
+        return;
+
+    }
+
+}
+
 
     // Crescimento
 
@@ -685,7 +818,17 @@ function gameOver(){
 
     ];
 
-    let frase = frases[Math.floor(Math.random() * frases.length)];
+let frase;
+
+if(arguments.length > 0){
+
+    frase = arguments[0];
+
+}else{
+
+    frase = frases[Math.floor(Math.random() * frases.length)];
+
+}
 
     document.getElementById("goFrase").innerText = frase;
 
@@ -788,10 +931,14 @@ if(reino.ouro >= custoOuro && reino.madeira >= custoMadeira){
 // Construir Serraria
 document.getElementById("btnSerraria").onclick = function(){
 
-    if(reino.ouro >= 80 && reino.madeira >= 40){
+    let custoOuro = custo(80);
+let custoMadeira = custo(40);
 
-        reino.ouro -= 80;
-        reino.madeira -= 40;
+if(reino.ouro >= custoOuro && reino.madeira >= custoMadeira){
+	
+	
+        reino.ouro -= custoOuro;
+        reino.madeira -= custoMadeira;
         reino.serrarias++;
 
         atualizarTela();
@@ -809,11 +956,13 @@ document.getElementById("btnSerraria").onclick = function(){
 // Construir Casa
 document.getElementById("btnCasa").onclick = function(){
 
-if(reino.ouro >= 50 && reino.madeira >= 100){
+let custoOuro = custo(50);
+let custoMadeira = custo(100);
 
-        reino.ouro -= 50;
-        reino.madeira -= 100;
-
+if(reino.ouro >= custoOuro && reino.madeira >= custoMadeira){
+   
+      reino.ouro -= custoOuro;
+      reino.madeira -= custoMadeira;
         reino.casas++;
 
         atualizarTela();
@@ -832,10 +981,13 @@ if(reino.ouro >= 50 && reino.madeira >= 100){
 // Construir Mina
 document.getElementById("btnMina").onclick = function(){
 
-  if(reino.ouro >= 150 && reino.madeira >= 60){
+let custoOuro = custo(150);
+let custoMadeira = custo(60);
 
-        reino.ouro -= 150;
-        reino.madeira -= 60;
+if(reino.ouro >= custoOuro && reino.madeira >= custoMadeira){
+	
+        reino.ouro -= custoOuro;
+       reino.madeira -= custoMadeira;
         reino.minas++;
 
         atualizarTela();
@@ -854,10 +1006,13 @@ document.getElementById("btnMina").onclick = function(){
 // Construir Quartel
 document.getElementById("btnQuartel").onclick = function(){
 
-  if(reino.ouro >= 120 && reino.madeira >= 80){
+let custoOuro = custo(120);
+let custoMadeira = custo(80);
 
-        reino.ouro -= 120;
-        reino.madeira -= 80;
+if(reino.ouro >= custoOuro && reino.madeira >= custoMadeira){
+	
+        reino.ouro -= custoOuro;
+      reino.madeira -= custoMadeira;
         reino.quarteis++;
 
         atualizarTela();
@@ -875,10 +1030,13 @@ document.getElementById("btnQuartel").onclick = function(){
 // Construir Mercado
 document.getElementById("btnMercado").onclick = function(){
 
-    if(reino.ouro >= 200 && reino.madeira >= 100){
+    let custoOuro = custo(200);
+let custoMadeira = custo(100);
 
-        reino.ouro -= 200;
-        reino.madeira -= 100;
+if(reino.ouro >= custoOuro && reino.madeira >= custoMadeira){
+    
+    reino.ouro -= custoOuro;
+    reino.madeira -= custoMadeira;
 
         reino.mercados++;
         
@@ -896,6 +1054,36 @@ document.getElementById("btnMercado").onclick = function(){
 
 };
 
+// Construir Muralha
+
+document.getElementById("btnMuralha").onclick = function(){
+
+    if(reino.muralha > 0){
+
+        mostrarPopup("🧱 A muralha já foi construída!");
+
+        return;
+
+    }
+
+    if(reino.ouro >= custo(500) && reino.madeira >= custo(500)){
+
+        reino.ouro -= custo(500);
+        reino.madeira -= custo(500);
+
+        reino.muralha = 100;
+
+        atualizarTela();
+
+        mostrarPopup("🧱 A muralha foi erguida!<br>O reino agora está protegido.");
+
+    }else{
+
+        mostrarPopup("❌ Recursos insuficientes!");
+
+    }
+
+};
 
 
 // ==========================
